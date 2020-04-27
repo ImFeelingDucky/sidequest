@@ -35,7 +35,7 @@ export default {
       e.preventDefault();
       let userAuthenticated = true;
       if (userAuthenticated) {
-        this.$router.push("/");
+        this.$router.push("/dashboard");
       }
     }
   }
