@@ -16,10 +16,9 @@
         </div>
         <div class="group-challenges">
           <h1>Challenges</h1>
-          <div
-            v-for="challenge in challengeGroup.challenges"
-            v-bind:key="challenge.id"
-          >{{challenge.name}}</div>
+          <div v-for="challenge in challengeGroup.challenges" v-bind:key="challenge.id">
+            <router-link :to="{ name: 'challenge', params: { id: challenge.id }}">{{challenge.name}}</router-link>
+          </div>
         </div>
         <div class="group-members">
           <h1>Members</h1>
