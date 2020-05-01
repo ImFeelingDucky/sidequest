@@ -28,10 +28,10 @@ const routes = [
       import(/* webpackChunkName: "about" */ '../views/Login.vue')
   },
   {
-    path: '/dashboard',
-    name: 'dashboard',
+    path: '/quest-groups',
+    name: 'questgroups',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Dashboard.vue')
+      import(/* webpackChunkName: "about" */ '../views/QuestGroups.vue')
   },
   {
     path: '/challenge/:id',

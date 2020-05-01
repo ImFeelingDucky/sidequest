@@ -6,6 +6,7 @@ export const currentUser = {
       id: 80,
       name: 'Dack for Dado',
       description: 'We want to be more active and get shredded.',
+      stake: '$200',
       members: [
         {
           id: 2,

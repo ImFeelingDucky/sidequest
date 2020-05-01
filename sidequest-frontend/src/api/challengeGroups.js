@@ -10,7 +10,9 @@ export default {
           name: 'Dack for Dado',
           description: 'We want to be more active and get shredded.',
           members: { ids: [1, 2] },
-          challenges: { ids: [100] }
+          challenges: { ids: [100] },
+          stake: '$200',
+          progress: 8
         }
       : requests.get(`/challengeGroups?id=${encodeURIComponent(id)}`)
 
