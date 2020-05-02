@@ -34,6 +34,12 @@ const routes = [
       import(/* webpackChunkName: "about" */ '../views/QuestGroups.vue')
   },
   {
+    path: '/quest-group/:id',
+    name: 'quest-group',
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/QuestGroup.vue')
+  },
+  {
     path: '/challenge/:id',
     name: 'challenge',
     component: () =>

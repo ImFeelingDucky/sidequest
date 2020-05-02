@@ -1,86 +1,101 @@
 <template>
-  <div>
-    <div class="quest-group-card">
-      <div class="card-top">
-        <div class="group-name">{{questGroup.name}}</div>
-        <div class="group-stake">
-          {{questGroup.stake}}
-          <span>stake</span>
-        </div>
-      </div>
+	<div>
+		<router-link :to="{ name: 'quest-group', params: { id: questGroup.id } }">
+			<div class="quest-group-card">
+				<div class="card-top">
+					<div class="group-name">{{ questGroup.name }}</div>
+					<div class="group-stake">
+						{{ questGroup.stake }}
+						<span>stake</span>
+					</div>
+				</div>
 
-      <!-- <div class="group-quests">
+				<!-- <div class="group-quests">
           <h1>quests</h1>
           <div v-for="quest in questGroup.quests" v-bind:key="quest.id">
             <router-link :to="{ name: 'quest', params: { id: quest.id }}">{{quest.name}}</router-link>
           </div>
       </div>-->
-      <div class="card-row first">
-        <h2>Members</h2>
-        <div class="member-icons-wrapper">
-          <div v-for="member in questGroup.members" v-bind:key="member.id">
-            <img class="member-icon" src="../assets/user-icon.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="card-row">
-        <h2>Today</h2>
-        <div class="progress-bar"></div>
-      </div>
-    </div>
-  </div>
+				<div class="card-row first">
+					<h2>Members</h2>
+					<div class="member-icons-wrapper">
+						<div v-for="member in questGroup.members" v-bind:key="member.id">
+							<img class="member-icon" src="../assets/user-icon.svg" />
+						</div>
+					</div>
+				</div>
+				<div class="card-row">
+					<h2>Today</h2>
+					<div class="progress-bar">
+						<v-progress-circular value="15"></v-progress-circular>
+					</div>
+				</div>
+			</div>
+		</router-link>
+	</div>
 </template>
 
 <script>
+import router from "../router/index"
+
 export default {
-  name: "QuestGroupCard",
-  props: ["questGroup"],
-  data() {
-    return {};
-  }
-};
+	name: "QuestGroupCard",
+	props: ["questGroup"],
+	data() {
+		return {}
+	},
+	methods: {},
+}
 </script>
 
 <style scoped>
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.progress-bar {
+	width: 100%;
+}
 .quest-group-card {
-  padding: 20px;
-  border-radius: 6px;
-  width: 80%;
-  background-color: #7269ff;
-  margin: auto;
+	padding: 20px;
+	border-radius: 6px;
+	width: 80%;
+	background-color: #7269ff;
+	margin: auto;
 }
 
 .card-top {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
 }
 
 span {
-  font-size: 10px;
+	font-size: 10px;
 }
 .card-row {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .card-row.first {
-  margin-top: 20px;
+	margin-top: 20px;
 }
 
 .group-stake {
-  font-size: 20px;
+	font-size: 20px;
 }
 
 h2 {
-  font-size: 14px;
+	font-size: 14px;
 }
 .member-icons-wrapper {
-  margin-left: 20px;
-  display: flex;
-  flex-wrap: nowrap;
+	margin-left: 20px;
+	display: flex;
+	flex-wrap: nowrap;
 }
 .member-icon {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 </style>
