@@ -27,7 +27,7 @@
 				<div class="card-row">
 					<h2>Today</h2>
 					<div class="progress-bar">
-						<v-progress-circular value="15"></v-progress-circular>
+						<v-progress-linear value="15"></v-progress-linear>
 					</div>
 				</div>
 			</div>
